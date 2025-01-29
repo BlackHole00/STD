@@ -1,0 +1,6 @@
+-Istd/include
+-std=c89
+-Wall
+-Wextra
+-Wpedantic
+
