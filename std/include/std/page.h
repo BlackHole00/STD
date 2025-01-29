@@ -1,13 +1,13 @@
 #ifndef _STD_PAGE_INCLUDED
 #define _STD_PAGE_INCLUDED
 
-#ifdef STD_LANGUAGE_CPP
-extern "C" {
-#endif
-
 #include <std/constant_symbols.h>
 #include <std/types.h>
 #include <std/slice.h>
+
+#ifdef STD_LANGUAGE_CPP
+extern "C" {
+#endif
 
 typedef enum std_PageResult {
 	STD_PAGERESULT_NO_PERMISSION_PROVIDED = -1,
