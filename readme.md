@@ -24,7 +24,7 @@ Memory management is manual, but STD will offer ways to easily handle the memory
 - [ ] context system
 - [ ] file manipulation
 - [ ] support all the platforms
-- ...
+- [ ] ...
 
 ## Other planned features:
 - [ ] dynamic linking
@@ -34,7 +34,7 @@ Memory management is manual, but STD will offer ways to easily handle the memory
 - [ ] binary serialization/deserialization
 - [ ] threading and synchronization primitives
 - [ ] task system (will be highly opinionated)
-- ...
+- [ ] ...
 
 # Building
 STD uses a unity build system. Just run `./build.sh` in the root of the project and the project will build.  
