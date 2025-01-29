@@ -27,6 +27,7 @@ Memory management is manual, but STD will offer ways to easily handle the memory
 - [ ] ...
 
 ## Other planned features:
+- [ ] cross-compiling (using zig cc?)
 - [ ] dynamic linking
 - [ ] os interface
 - [ ] json serialization/deserialization
