@@ -1,8 +1,7 @@
 #include <std/page.h>
 #include <std/memory_constants.h>
 
-extern std_PageResult _std_page_create_impl(std_Page* page);
-extern void _std_page_destroy_impl(std_Page page);
+#include "page_implementation.h"
 
 static std_PageResult pagedescriptor_is_valid(std_PageDescriptor descriptor) {
 	/*

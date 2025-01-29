@@ -5,6 +5,8 @@
 #include <std/constant_symbols.h>
 #include <std/syscalls.h>
 
+#include "page_implementation.h"
+
 #define STD_POSIX_MMAP_PROT_NONE 0x0000
 #define STD_POSIX_MMAP_PROT_READ 0x0001
 #define STD_POSIX_MMAP_PROT_WRITE 0x0002
