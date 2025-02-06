@@ -3,4 +3,5 @@
 -Wall
 -Wextra
 -Wpedantic
+-DSTD_PLATFORM_WINDOWS=1
 
