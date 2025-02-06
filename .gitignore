@@ -1,6 +1,8 @@
 **/.DS_Store
 **/*.o
-build/main
-build/mainpp
+**/*.obj
+**/*.exe
+build/main_*_*
+build/main_*_*
 doc/doxygen
 
