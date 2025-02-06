@@ -1,10 +1,11 @@
-#ifndef _STD_CONSTANTSYMBOLS_INCLUDED
-#define _STD_CONSTANTSYMBOLS_INCLUDED
+#ifndef _STD_BASECONSTANTSYMBOLS_INCLUDED
+#define _STD_BASECONSTANTSYMBOLS_INCLUDED
 
-#include <std/language_constant_symbols.h>
-#include <std/architecture_constant_symbols.h>
-#include <std/platform_constant_symbols.h>
-#include <std/endianness_constant_symbols.h>
+#include <std/base/compiler_constant_symbols.h>
+#include <std/base/language_constant_symbols.h>
+#include <std/base/architecture_constant_symbols.h>
+#include <std/base/platform_constant_symbols.h>
+#include <std/base/endianness_constant_symbols.h>
 
 #ifdef STD_LANGUAGE_C_OLD
 	#error "STD requires a C89 or CPP compliant compiler"
@@ -19,15 +20,15 @@ TODO: Apply the MVP targets when STD is mature enough
 #endif
 */
 
-#ifndef STD_PLATFORM_DARWIN
+/* #ifndef STD_PLATFORM_DARWIN
 	#error "STD supports only Darwin for the time being"
 #endif
 #ifndef STD_ARCHITECTURE_ARM64
 	#error "STD supports only ARM64 for the time being"
-#endif
-#ifndef STD_ENDIANNESS_LITTLE
+#endif */
+/*#ifndef STD_ENDIANNESS_LITTLE
 	#error "STD expects a little endian system currently"
-#endif
+#endif*/
 
 #endif
 
