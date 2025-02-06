@@ -1,5 +1,5 @@
-#include <std/page.h>
-#include <std/memory_constants.h>
+#include <std/mem/page.h>
+#include <std/mem/constants.h>
 
 #include "page_implementation.h"
 
@@ -12,6 +12,9 @@ static std_PageResult pagedescriptor_is_valid(std_PageDescriptor descriptor) {
 	*/
 	if (descriptor.protection == 0) {
 		return STD_PAGERESULT_NO_PERMISSION_PROVIDED;
+	}
+	if (descriptor.protection >= 8) {
+		return STD_PAGERESULT_INVALID_DESCRIPTOR;
 	}
 
 	return STD_PAGERESULT_SUCCESS;

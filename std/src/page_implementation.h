@@ -1,8 +1,8 @@
 #ifndef _STD_PAGEIMPLEMENTATION_INCLUDED
 #define _STD_PAGEIMPLEMENTATION_INCLUDED
 
-#include <std/constant_symbols.h>
-#include <std/page.h>
+#include <std/base/constant_symbols.h>
+#include <std/mem/page.h>
 
 #ifdef STD_LANGUAGE_CPP
 extern "C" {
