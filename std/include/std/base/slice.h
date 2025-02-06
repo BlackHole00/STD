@@ -27,7 +27,7 @@ extern "C" {
 	@note Slices **do not own** any data. Any operation on slices will never
 		allocate, deallocate or create copies of the referenced data.
 		For operations related to memory menagament, consider looking at
-		@ref std/mem.h.
+		std/mem.h.
 */
 typedef struct std_Slice {
 	/** @brief A pointer to the first element of the referenced data. */

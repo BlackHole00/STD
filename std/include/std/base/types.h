@@ -35,10 +35,19 @@ typedef unsigned long long int uintptr;
 	#pragma gcc diagnostic pop
 #endif
 
-/** @brief a single UTF-8 encoded big-endian character */
+/**
+	@class rune
+	@brief A single UTF-8 encoded big-endian character.
+	@see char
+*/
 typedef u32 rune;
-/** @brief a single extended ASCII (8 bits) encoded character */
-/* typedef char char; */
+
+/**
+	@class char
+	@brief A single extended ASCII (8 bits) encoded character.
+	@see rune
+*/
+typedef char _doc_char;
 
 typedef float f32;
 typedef double f64;
@@ -55,9 +64,24 @@ typedef u64 b64;
 	};
 #endif
 
+/**
+	@def invalid_char
+	@brief A value representing an invalid character.
+	@memberof char
+*/
 #define invalid_char (char)-127
+
+/**
+	@def invalid_rune
+	@brief A value representing an invalid rune.
+	@memberof rune
+*/
 #define invalid_rune (rune)0xffffffff
 
+/**
+	@def null
+	@brief A value representing an invalid address.
+*/
 #define null (void*)(0)
 
 #endif
