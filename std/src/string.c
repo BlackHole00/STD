@@ -1,4 +1,4 @@
-#include <std/string.h>
+#include <std/base/string.h>
 
 std_String std_string_create(byte* data, usize length) {
 	std_String string;
@@ -79,6 +79,10 @@ rune std_string_get(std_String string, usize index) {
 
 	result = std_rune_from_pointer(current_ptr);
 	return result;
+}
+
+bool std_string_is_index_valid(std_String string, usize index) {
+	return index < string.count;
 }
 
 std_StringIterator std_string_iterator(std_String string) {

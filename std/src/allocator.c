@@ -1,4 +1,4 @@
-#include <std/allocator.h>
+#include <std/mem/allocator.h>
 
 std_AllocatorResult std_allocator_alloc(std_Allocator allocator, usize size, void** new_pointer) {
 	return allocator.proc_table->alloc(allocator.data, size, new_pointer);
