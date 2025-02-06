@@ -1,18 +1,28 @@
-#ifndef STD_PLATFORM_NOLIBC
+#include <std/base/constant_symbols.h>
+#if !defined(STD_PLATFORM_NOLIBC) && !defined(STD_COMPILER_TCC)
 
 #include "entrypoint.h"
 
-#ifdef __cplusplus
+#ifdef STD_LANGUAGE_CPP
 extern "C" {
 #endif
 
-	int _start(void) {
-		std_main();
+#include <std/windows/constants.h>
+#include <std/windows/kernel32.h>
 
-		return 0;
-	}
+int _start(void) {
+	/* TODO: Split entrypoints */
+	#ifdef STD_PLATFORM_WINDOWS
+		SetConsoleOutputCP(STD_WINDOWS_CP_UTF8);
+		SetConsoleCP(STD_WINDOWS_CP_UTF8);
+	#endif
 
-#ifdef __cplusplus
+	std_main();
+
+	return 0;
+}
+
+#ifdef STD_LANGUAGE_CPP
 }
 #endif
 
