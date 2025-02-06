@@ -1,7 +1,7 @@
-#ifndef _STD_MEMORYCONSTANTS_INCLUDED
-#define _STD_MEMORYCONSTANTS_INCLUDED
+#ifndef _STD_MEMCONSTANTS_INCLUDED
+#define _STD_MEMCONSTANTS_INCLUDED
 
-#include <std/types.h>
+#include <std/base/types.h>
 
 #define STD_MEM_BYTE (u64)1
 #define STD_MEM_KILOBYTE (u64)(1024 * STD_MEM_BYTE)

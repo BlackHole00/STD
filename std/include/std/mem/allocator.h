@@ -1,20 +1,31 @@
-#ifndef _STD_ALLOCATOR_INCLUDED
-#define _STD_ALLOCATOR_INCLUDED
+#ifndef _STD_MEMALLOCATOR_INCLUDED
+#define _STD_MEMALLOCATOR_INCLUDED
 
-#include <std/constant_symbols.h>
-#include <std/types.h>
+#include <std/base/constant_symbols.h>
+#include <std/base/types.h>
 
 #ifdef STD_LANGUAGE_CPP
 extern "C" {
 #endif
 
+/**
+	@enum std_AllocatorResult
+	@brief represents the status of an allocator operation
+*/
 typedef enum std_AllocatorResult {
+	/** @brief The allocation succeded */
 	STD_ALLOCATOR_RESULT_SUCCESS = 0,
+	/** @brief The allocator does not support the operation attempted */
 	STD_ALLOCATOR_RESULT_UNSUPPORTED_OPERATION,
+	/** @brief An invalid parameter was specified for the allocation */
 	STD_ALLOCATOR_RESULT_INVALID_PARAMETER,
+	/** @brief The allocation failed for other reasons */
 	STD_ALLOCATOR_RESULT_ALLOCATION_FAILED
 } std_AllocatorResult;
 
+/**
+	@typedef std_AllocatorResult
+*/
 typedef std_AllocatorResult (*std_AllocatorAllocProc)(void* allocator_data, usize size, void** new_pointer);
 typedef std_AllocatorResult (*std_AllocatorDeallocProc)(void* allocator_data, void* pointer);
 typedef std_AllocatorResult (*std_AllocatorReallocProc)(
