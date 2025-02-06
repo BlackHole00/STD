@@ -5,45 +5,45 @@
 
 /**
 	@class byte
-	@brief An unsigned byte. The STD equivalent to uint8_t.
+	@brief An unsigned byte. The STD equivalent to uint8`_t`.
 	@see u8
 */
 typedef unsigned char byte;
 
 /**
 	@class u8
-	@brief An unsigned byte. The STD equivalent to uint8_t.
+	@brief An unsigned byte. The STD equivalent to uint8`_t`.
 	@see u8
 */
 typedef unsigned char u8;
 
 /**
 	@class i8
-	@brief A signed byte. The STD equivalent to int8_t.
+	@brief A signed byte. The STD equivalent to int8`_t`.
 */
 typedef signed char i8;
 
 /**
 	@class u16
-	@brief An unsigned 16-bit wide short. The STD equivalent to uint16_t.
+	@brief An unsigned 16-bit wide short. The STD equivalent to uint16`_t`.
 */
 typedef unsigned short u16;
 
 /**
 	@class i16
-	@brief A signed 16-bit wide short. The STD equivalent to int16_t.
+	@brief A signed 16-bit wide short. The STD equivalent to int16`_t`.
 */
 typedef signed short i16;
 
 /**
 	@class u32
-	@brief An unsigned 32-bit wide int. The STD equivalent to uint32_t.
+	@brief An unsigned 32-bit wide int. The STD equivalent to uint32`_t`.
 */
 typedef unsigned int u32;
 
 /**
 	@class i32
-	@brief A signed 32-bit wide int. The STD equivalent to int32_t.
+	@brief A signed 32-bit wide int. The STD equivalent to int32`_t`.
 */
 typedef signed int i32;
 
@@ -57,14 +57,14 @@ typedef signed int i32;
 
 /**
 	@class u64
-	@brief An unsigned 64-bit wide int. The STD equivalent to uint64_t.
+	@brief An unsigned 64-bit wide int. The STD equivalent to uint64`_t`.
 */
 typedef unsigned long long int u64;
 
 
 /**
 	@class i64
-	@brief A signed 64-bit wide int. The STD equivalent to int64_t.
+	@brief A signed 64-bit wide int. The STD equivalent to int64`_t`.
 */
 typedef signed long long int i64;
 
@@ -72,7 +72,7 @@ typedef signed long long int i64;
 /**
 	@class usize
 	@brief An unsigned integer guaranteed to be register wide. The STD
-		equivalent to size_t.
+		equivalent to size`_t`.
 	@note When doing operations on pointer values prefer using @ref uintptr.
 	@see uinptr
 */
@@ -81,14 +81,14 @@ typedef unsigned long long int usize;
 /**
 	@class isize
 	@brief An signed integer guaranteed to be register wide. The STD
-		equivalent to ssize_t.
+		equivalent to ssize`_t`.
 */
 typedef signed long long int isize;
 
 /**
 	@class uintptr
 	@brief An unsigned integer guaranteed to be register wide. The STD
-		equivalent to size_t.
+		equivalent to size`_t`.
 	@note Prefer using uintptr only when doing operations on pointer values.
 		In other cases prefer using @ref usize.
 	@see usize

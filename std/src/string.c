@@ -39,6 +39,13 @@ std_String std_string_from_cstring(const char* cstring) {
 	usize i = 0;
 
 	while (cstring[i] != 0) {
+		if (std_char_is_extended_ascii(cstring[i])) {
+			string.data = (byte*)null;
+			string.length = 0;
+			string.count = 0;
+			return string;
+		}
+
 		i++;
 	}
 

@@ -12,6 +12,7 @@ extern "C" {
 	A slice pepresents a fat pointer to some elements. This means that 
 	internally it contains a reference to the first element and the number
 	of consecutive elements.
+
 	A slice has three possible states:
 		- null: the slice is referencing a @ref null pointer (the
 			default state)
@@ -20,7 +21,10 @@ extern "C" {
 			subslicing
 		- valid: the slice is referencing a valid pointer and the 
 			number of elements is not 0
+
 	Please note that it is preferrable to pass slices by value.
+
+	Conceptually `std_Slice` is equivalent to a `std::span`.
 
 	@brief Represents a reference to some elements. It can be seen as a
 		safer pointer.
@@ -47,6 +51,8 @@ typedef struct std_Slice {
 	@param element_size The size of a single element. If 0 it will be
 		interpreted as 1 (byte slice).
 	@return The slice referencing the specified data.
+	@note The slice will take a reference of the data, it will not allocate
+		a new buffer.
 	@memberof std_Slice
 */
 std_Slice std_slice_create(void* data, usize count, u32 element_size);

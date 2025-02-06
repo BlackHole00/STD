@@ -16,7 +16,7 @@ if test -z "$AS"; then
 fi
 
 BUILD_ARGS="-Wall -Wextra -Wpedantic -g -ansi -static -ffreestanding -nodefaultlibs -fno-builtin -nostdlib -Wno-main-return-type  -Istd/include -fno-stack-protector"
-BUILD_ARGS_XX="-Wall -Wextra -Wpedantic -std=c++98 -g -static -ffreestanding -nodefaultlibs -nostdinc++ -fno-builtin -nostdlib -Wno-main-return-type  -Istd/include -fno-stack-protector"
+BUILD_ARGS_XX="-Wall -Wextra -Wpedantic -std=c++17 -g -static -ffreestanding -nodefaultlibs -nostdinc++ -fno-builtin -nostdlib -Wno-main-return-type  -Istd/include -fno-stack-protector"
 
 echo "Assembling _build.s"
 $AS -g std/src/_build.s -o build/stdlib_gnu_arm64_s.o
