@@ -197,5 +197,7 @@ void std_main(void) {
 	test_chars();
 	test_string();
 	test_page();
+
+	print_bytes(&g_runtime_globals.page_size, sizeof(usize));
 }
 

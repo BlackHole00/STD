@@ -14,6 +14,9 @@
 
 #define STD_POSIX_MMAP_FAILED (void*)-1
 
+#define STD_POSIX_CTL_HW 6
+#define STD_POSIX_HW_PAGESIZE 7
+
 #endif
 #endif
 

@@ -2,6 +2,7 @@
 #if !defined(STD_PLATFORM_NOLIBC) && !defined(STD_COMPILER_TCC)
 
 #include "entrypoint.h"
+#include <std/runtime/runtime.h>
 
 #ifdef STD_LANGUAGE_CPP
 extern "C" {
@@ -16,6 +17,7 @@ int _start(void) {
 		SetConsoleOutputCP(STD_WINDOWS_CP_UTF8);
 		SetConsoleCP(STD_WINDOWS_CP_UTF8);
 	#endif
+	std_runtimeglobals_init();
 
 	std_main();
 

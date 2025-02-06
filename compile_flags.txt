@@ -4,4 +4,5 @@
 -Wextra
 -Wpedantic
 -DSTD_PLATFORM_WINDOWS=1
+-DSTD_PLATFORM_POSIX=1
 

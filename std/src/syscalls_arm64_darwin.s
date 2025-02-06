@@ -1,6 +1,7 @@
 .global _std_posix_syscall_write
 .global _std_posix_syscall_mmap
 .global _std_posix_syscall_munmap
+.global _std_posix_syscall_sysctl
 
 // @fn isize std_posix_syscall_write(u32 file_descriptor, const void* buffer, usize buffer_size)
 // @brief Calls the write syscall
@@ -39,4 +40,5 @@ _std_posix_syscall_sysctl:
 	mov x16, #202
 	movk x16, #512, lsl #16
 	svc #0x80
+	ret
 

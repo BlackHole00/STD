@@ -36,7 +36,14 @@ extern void* std_posix_syscall_mmap(
 
 extern i32 std_posix_syscall_munmap(void* address, usize length);
 
-extern i32 std_posix_syscall_sysctl(const char* name, u32 name_length, void* old_value, usize old_value_length, void* new_value, usize new_value_length);
+extern i32 std_posix_syscall_sysctl(
+	i32* name,
+	u32 name_length,
+	void* old_value,
+	usize* old_value_length,
+	void* new_value,
+	usize new_value_length
+);
 
 #ifdef __cplusplus
 }

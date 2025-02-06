@@ -7,6 +7,8 @@
 #include <std/base/slice.h>
 #include <std/base/string.h>
 
+#include <std/runtime/runtime.h>
+
 #include <std/mem/allocator.h>
 #include <std/mem/page.h>
 #include <std/mem/constants.h>

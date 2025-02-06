@@ -8,7 +8,7 @@
             "type": "lldb",
             "request": "launch",
             "name": "Debug",
-            "program": "${workspaceFolder}/build/main_tcc_arm64",
+            "program": "${workspaceFolder}/build/main_gnu_arm64_cpp",
             "args": [],
             "cwd": "${workspaceFolder}",
             "stopOnEntry": true

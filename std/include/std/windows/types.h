@@ -1,5 +1,5 @@
-#ifndef _STD_WINDOWSTYPES_DEFINED
-#define _STD_WINDOWSTYPES_DEFINED
+#ifndef _STD_WINDOWSTYPES_INCLUDED
+#define _STD_WINDOWSTYPES_INCLUDED
 
 #include <std/base/constant_symbols.h>
 #ifdef STD_PLATFORM_WINDOWS
