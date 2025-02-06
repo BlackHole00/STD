@@ -1,9 +1,9 @@
-#ifndef _STD_STRING_INCLUDED
-#define _STD_STRING_INCLUDED
+#ifndef _STD_BASESTRING_INCLUDED
+#define _STD_BASESTRING_INCLUDED
 
-#include <std/constant_symbols.h>
-#include <std/types.h>
-#include <std/runes.h>
+#include <std/base/constant_symbols.h>
+#include <std/base/types.h>
+#include <std/base/runes.h>
 
 #ifdef STD_LANGUAGE_CPP
 extern "C" {
@@ -12,7 +12,7 @@ extern "C" {
 /**
 	@struct std_String
 	@brief represents an utf8 encoded string
-	@usage prefer passing it by value
+	@note prefer passing strings by value
 */
 typedef struct std_String {
 	/** @brief a pointer to the first byte of the string */
@@ -59,38 +59,56 @@ std_String std_string_from_cstring(const char* cstring);
 /**
 	@fn std_string_is_null
 	@brief checks if the string is null (it points to null)
+	@param string
 */
 bool std_string_is_null(std_String string);
 
 /**
 	@fn std_string_is_empty
 	@brief checks if the string is empty (it is null or has length 0)
+	@param string
 */
 bool std_string_is_empty(std_String string);
 
 /**
 	@fn std_string_is_ascii
 	@brief checks if the string is ascii encoded
+	@param string
 */
 bool std_string_is_ascii(std_String string);
 
 /**
 	@fn std_string_get
 	@brief returns the i-th rune of the string
+	@param string
+	@param index
 	@return returns the specified rune. If the index is out of bounds,
 		invalid_rune will be returned
 */
 rune std_string_get(std_String string, usize index);
 
 /**
+	@fn std_string_is_index_valid
+	@brief checks if a given rune index is valid
+	@param string
+	@param index
+*/
+bool std_string_is_index_valid(std_String string, usize index);
+
+/**
 	@fn std_string_iterator
 	@brief returns an iterator for the current string
+	@param string
 */
 std_StringIterator std_string_iterator(std_String string);
 
 /**
 	@fn std_stringiterator_next
 	@brief gets the next element of the iterator
+	@param iterator
+	@param element
+	@return true if the current element is valid, false if it is not and
+		the iterator does not have other elements
 */
 bool std_stringiterator_next(std_StringIterator* iterator, rune* element);
 

@@ -1,5 +1,7 @@
-#ifndef _STD_TYPES_INCLUDED
-#define _STD_TYPES_INCLUDED
+#ifndef _STD_BASETYPES_INCLUDED
+#define _STD_BASETYPES_INCLUDED
+
+#include <std/base/constant_symbols.h>
 
 typedef unsigned char byte;
 
@@ -11,8 +13,14 @@ typedef unsigned int u32;
 typedef signed int i32;
 
 /* TODO: Support msvc (__int64) and gcc (#pragma gcc ...) */
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wlong-long"
+#ifdef STD_COMPILER_CLANG
+	#pragma clang diagnostic push
+	#pragma clang diagnostic ignored "-Wlong-long"
+#elif defined(STD_COMPILER_GCC)
+	#pragma gcc diagnostic push
+	#pragma gcc diagnostic ignored "-Wlong-long"
+#endif
+
 typedef unsigned long long int u64;
 typedef signed long long int i64;
 
@@ -20,7 +28,12 @@ typedef signed long long int i64;
 typedef unsigned long long int usize;
 typedef signed long long int isize;
 typedef unsigned long long int uintptr;
-#pragma clang diagnostic pop
+
+#ifdef STD_COMPILER_CLANG
+	#pragma clang diagnostic pop
+#elif defined(STD_COMPILER_GCC)
+	#pragma gcc diagnostic pop
+#endif
 
 /** @brief a single UTF-8 encoded big-endian character */
 typedef u32 rune;
@@ -42,7 +55,7 @@ typedef u64 b64;
 	};
 #endif
 
-#define invalid_char (char)0x81
+#define invalid_char (char)-127
 #define invalid_rune (rune)0xffffffff
 
 #define null (void*)(0)
