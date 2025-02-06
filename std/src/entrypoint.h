@@ -1,11 +1,7 @@
 #ifndef _STD_ENTRYPOINT_DEFINED
 #define _STD_ENTRYPOINT_DEFINED
 
-#include <std/constant_symbols.h>
-
-#ifdef STD_LANGUAGE_CPP
-extern "C" {
-#endif
+#include <std/base/constant_symbols.h>
 
 /**
 	@fn std_main
@@ -13,9 +9,5 @@ extern "C" {
 		declare its body
 */
 extern void std_main(void);
-
-#ifdef STD_LANGUAGE_CPP
-}
-#endif
 
 #endif
