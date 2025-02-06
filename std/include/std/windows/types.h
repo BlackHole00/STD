@@ -18,16 +18,6 @@ typedef u32* std_LPDWORD;
 
 typedef b32 std_BOOL;
 
-#ifndef STD_DISALLOW_GLOBAL_NAMESPACE
-	#define VOID std_VOID
-	#define LPVOID std_LPVOID
-	#define HANDLE std_HANDLE
-	#define SIZE_T std_SIZE_T
-	#define DWORD std_DWORD
-	#define LPDWORD std_LPDWORD
-	#define BOOL std_BOOL
-#endif
-
 #endif
 #endif
 

@@ -51,16 +51,6 @@ void std_page_destroy(std_Page page);
 std_Slice std_page_as_byte_slice(std_Page page);
 std_Slice std_page_as_slice(std_Page page, u32 element_size);
 
-#ifndef STD_DISALLOW_GLOBAL_NAMESPACE
-	#define Page std_Page
-	#define PageDescriptor std_PageDescriptor
-	#define PageProcetionFlag std_PageProcetionFlag
-	#define PageProtection std_PageProtection
-	#define page_create std_page_create
-	#define page_destroy std_page_destroy
-	#define page_as_slice std_page_as_slice
-#endif
-
 #ifdef STD_LANGUAGE_CPP
 }
 #endif

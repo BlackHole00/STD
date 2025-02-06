@@ -147,21 +147,6 @@ std_StringIterator std_string_iterator(std_String string);
 */
 bool std_stringiterator_next(std_StringIterator* iterator, rune* element);
 
-#ifndef STD_DISALLOW_GLOBAL_NAMESPACE
-	#define String std_String
-	#define StringIterator std_StringIterator
-
-	#define string_create std_string_create
-	#define string_from_cstring std_string_from_cstring
-	#define string_is_null std_string_is_null
-	#define string_is_empty std_string_is_empty
-	#define string_is_ascii std_string_is_ascii
-	#define string_get std_string_get
-	#define string_iterator std_string_iterator
-
-	#define stringiterator_next std_stringiterator_next
-#endif
-
 #ifdef STD_LANGUAGE_CPP
 }
 #endif

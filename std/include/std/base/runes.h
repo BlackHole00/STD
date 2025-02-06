@@ -83,18 +83,6 @@ bool std_char_is_extended_ascii(char character);
 */
 rune std_char_to_rune(char character);
 
-#ifndef STD_DISALLOW_GLOBAL_NAMESPACE
-	#define rune_from_pointer std_rune_from_pointer
-	#define rune_bytes_used std_rune_bytes_used
-	#define rune_is_valid std_rune_is_valid
-	#define rune_is_ascii std_rune_is_ascii
-	#define rune_to_char std_rune_to_char
-
-	#define char_is_valid std_char_is_valid
-	#define char_is_extended_ascii std_char_is_extended_ascii
-	#define char_to_rune std_char_to_rune
-#endif
-
 #ifdef STD_LANGUAGE_CPP
 }
 #endif

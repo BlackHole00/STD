@@ -111,12 +111,12 @@ void test_chars(void) {
 }
 
 void test_string(void) {
-	String cstring;
-	String standard_string;
-	String utf8_string;
-	StringIterator cstring_iterator;
-	StringIterator standard_string_iterator;
-	StringIterator utf8_string_iterator;
+	std_String cstring;
+	std_String standard_string;
+	std_String utf8_string;
+	std_StringIterator cstring_iterator;
+	std_StringIterator standard_string_iterator;
+	std_StringIterator utf8_string_iterator;
 
 	const char* cstring_raw = "Hello string!";
 	byte standard_raw[] = { 0x68, 0x65, 0x6c, 0x6c, 0x6f }; /* hello */
@@ -127,47 +127,47 @@ void test_string(void) {
 	usize i = 0;
 	rune character;
 
-	cstring = string_from_cstring(cstring_raw);
-	standard_string = string_create(standard_raw, 5);
-	utf8_string = string_create(utf8_raw, 15);
+	cstring = std_string_from_cstring(cstring_raw);
+	standard_string = std_string_create(standard_raw, 5);
+	utf8_string = std_string_create(utf8_raw, 15);
 
-	cstring_iterator = string_iterator(cstring);
-	standard_string_iterator = string_iterator(standard_string);
-	utf8_string_iterator = string_iterator(utf8_string);
+	cstring_iterator = std_string_iterator(cstring);
+	standard_string_iterator = std_string_iterator(standard_string);
+	utf8_string_iterator = std_string_iterator(utf8_string);
 
 	print_cstring(cstring.count == 13 ? "OK\n" : "NO\n");
 	print_cstring(standard_string.count == 5 ? "OK\n" : "NO\n");
 	print_cstring(utf8_string.count == 5 ? "OK\n" : "NO\n");
 
-	while (stringiterator_next(&cstring_iterator, &character)) {
+	while (std_stringiterator_next(&cstring_iterator, &character)) {
 		print_rune(character);
 	}
 	print_cstring("\n");
 
-	while (stringiterator_next(&standard_string_iterator, &character)) {
+	while (std_stringiterator_next(&standard_string_iterator, &character)) {
 		print_rune(character);
 	}
 	print_cstring("\n");
 
-	while (stringiterator_next(&utf8_string_iterator, &character)) {
+	while (std_stringiterator_next(&utf8_string_iterator, &character)) {
 		print_rune(character);
 	}
 	print_cstring("\n");
 
 	for (i = 0; i < cstring.count; i++) {
-		character = string_get(cstring, i);
+		character = std_string_get(cstring, i);
 		print_rune(character);
 	}
 	print_cstring("\n");
 
 	for (i = 0; i < standard_string.count; i++) {
-		character = string_get(cstring, i);
+		character = std_string_get(cstring, i);
 		print_rune(character);
 	}
 	print_cstring("\n");
 
 	for (i = 0; i < utf8_string.count; i++) {
-		character = string_get(cstring, i);
+		character = std_string_get(cstring, i);
 		print_rune(character);
 	}
 	print_cstring("\n");
@@ -176,19 +176,19 @@ void test_string(void) {
 }
 
 void test_page(void) {
-	PageDescriptor page_descriptor;
-	Page page;
+	std_PageDescriptor page_descriptor;
+	std_Page page;
 	std_Slice page_slice;
 
 	page_descriptor.page_address = 0;
-	page_descriptor.page_size = 16 * MEM_KILOBYTE;
+	page_descriptor.page_size = 16 * STD_MEM_KILOBYTE;
 	page_descriptor.protection = STD_PAGEPROTECTION_READ | STD_PAGEPROTECTION_WRITE;
 
-	page_create(&page, page_descriptor);
+	std_page_create(&page, page_descriptor);
 	page_slice = std_page_as_slice(page, sizeof(usize));
 	*(usize*)std_slice_get(page_slice, 1000) = 0x01;
 
-	page_destroy(page);
+	std_page_destroy(page);
 }
 
 void std_main(void) {
